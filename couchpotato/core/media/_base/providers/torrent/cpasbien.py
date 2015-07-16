@@ -20,7 +20,7 @@ from couchpotato.core.event import fireEvent
 log = CPLog(__name__)
 
 
-class base(TorrentProvider):
+class Base(TorrentProvider):
 
     urls = {
         'test': 'http://www.cpasbien.pw/',
@@ -240,5 +240,23 @@ class base(TorrentProvider):
         except:
             log.error('Failed downloading from %s: %s', (self.getName(), traceback.format_exc()))
       
-Status API Training Shop Blog About Help
-© 2015 GitHub, Inc. Terms Privacy Security Contact
+config = [{
+    'name': 'cPASbien',
+    'groups': [
+        {
+            'tab': 'searcher',
+            'subtab': 'providers',
+            'list': 'torrent_providers',
+            'name': 'cPASbien',
+            'description': 'See <a href="http://www.cpasbien.pw/">cPASbien</a>',
+            'wizard': True,
+            'options': [
+                {
+                    'name': 'enabled',
+                    'type': 'enabler',
+                    'default': True,
+                },
+            ],
+        },
+    ],
+}]
